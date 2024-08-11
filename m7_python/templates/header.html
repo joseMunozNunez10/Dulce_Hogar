@@ -1,0 +1,36 @@
+
+{% load static %}
+
+{% block 'content' %}
+
+<div class="container-fluid position-fixed top-0 start-0 p-2" style="height: 110px;">
+    <div class="d-flex align-items-center justify-content-between col-12 col-lg-10" style="height: 100%;">
+        <!-- Div para la imagen -->
+        <div class="align-items-center col-6 col-lg-4 pt-5" style="text-align: center; width: 250px; height: 200px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)">
+            <img src="{% static 'img/Dulce.png'%}" alt="logo" class="img-fluid" width="110" height="110">
+        </div>
+
+        <!-- Div para las cajas de información -->
+        <div class="d-flex align-items-center pt-2">
+            <!-- Caja para teléfono -->
+            <div class="align-items-center col-6 col-lg-4 pt-5" style="text-align: center; width: 250px; height: 200px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <i class="fa-regular fa-phone pt-2 pb-2"></i>
+                <span style="color: red;">Telefono</span>
+                <p>123 Calle Principal, Ciudad</p>
+            </div>
+            
+            
+
+            <!-- Caja para dirección -->
+            <div class="align-items-center col-6 col-lg-4 pt-5" style="text-align: center; width: 250px; height: 200px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <i class="fa-regular fa-location-dot pt-2 pb-2"></i>
+                <span style="color: red;">Telefono</span>
+                <p>123 Calle Principal, Ciudad</p>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}
