@@ -6,34 +6,136 @@
 <!-- banner principal  -->
 <img src="{% static 'img/banner_principal.png' %}" class="img-fluid" alt="banner principal corredores">
 
-<!-- Propiedades destacadas -->
+<!-- Filtro por propiedades  -->
+<div class="container mt-4">
+    <div class="bg-white border custom-border-danger p-4 d-flex align-items-center gap-3">
+        <div class="flex-grow-1">
+            <select class="form-select">
+                <option>TIPO USUARIO</option>
+                {% for tipo_user in tipos_usuario %}
+                    <option>{{ tipo_user.tipo_user }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="flex-grow-1">
+            <select class="form-select">
+                <option>TIPO PROPIEDAD</option>
+                {% for tipo_inmueble in tipos_inmueble %}
+                    <option>{{ tipo_inmueble.tipo_inmueble }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="flex-grow-1">
+            <select class="form-select">
+                <option>REGIÓN</option>
+                {% for region in regiones %}
+                    <option>{{ region.region }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="flex-grow-1">
+            <select class="form-select">
+                <option>COMUNA</option>
+                {% for comuna in comunas %}
+                    <option>{{ comuna.comuna }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <button class="btn btn-primary-custom">BUSCAR</button>
+        </div>
+    </div>
+</div>
 
-<div class="container pt-5 ">
-    <h1 class="text-center mb-5">Propiedades Destacadas</h1>
-    <div class="col-md-4 mb-4">
+<!-- Propiedades destacadas -->
+<div class="container pt-5">
+    <h1 class="text-center mb-5">PROPIEDADES DESTACADAS</h1>
+    <div class="row">
         {% for inmueble in inmuebles %}
-        <div class="card">
-            <img src="{% static 'img/placeholder.jpg' %}" class="card-img-top" alt="Imagen de inmueble">
-            <div class="card-body">
-                <h5 class="card-title">{{ inmueble.nombre_inmueble }}</h5>
-                <p class="card-text">{{ inmueble.descripcion }}</p>
-                <p class="card-text">
-                    <i class="fa-solid fa-location-dot"></i><strong> Dirección:</strong> {{ inmueble.direccion }}</p>
-                <p class="card-text">
-                    <i class="fa-solid fa-arrows-up-down-left-right"></i><strong>  Metros Construidos:</strong> {{ inmueble.m2_construido }}</p>
-                <p class="card-text">
-                    <i class="fa-solid fa-toilet"></i><strong>  Número de Baños:</strong> {{ inmueble.numero_banos }}</p>
-                <p class="card-text">
-                    <i class="fa-solid fa-bed"></i><strong>  Número de Habitaciones:</strong> {{ inmueble.numero_hab }}</p>
-                <p class="card-text">
-                    <i class="fa-solid fa-arrows-up-down-left-right"></i><strong>  Metros Terreno:</strong> {{ inmueble.m2_terreno }}</p>
-                <p class="card-text">
-                    <i class="fa-solid fa-car"></i><strong>  Número de Estacionamientos:</strong> {{ inmueble.numero_est }}</p>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100"> 
+                <img src="{% static 'img/placeholder.jpg' %}" class="card-img-top" alt="Imagen de inmueble">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ inmueble.nombre_inmueble }}</h5>
+                    <p class="card-text">{{ inmueble.descripcion }}</p>
+                    <p class="card-text">
+                        <i class="fa-solid fa-location-dot"></i><strong> Dirección:</strong> {{ inmueble.direccion }}
+                    </p>
+                    <p class="card-text">
+                        <i class="fa-solid fa-arrows-up-down-left-right"></i><strong> Metros Construidos:</strong> {{ inmueble.m2_construido }}
+                    </p>
+                    <p class="card-text">
+                        <i class="fa-solid fa-toilet"></i><strong> Número de Baños:</strong> {{ inmueble.numero_banos }}
+                    </p>
+                    <p class="card-text">
+                        <i class="fa-solid fa-bed"></i><strong> Número de Habitaciones:</strong> {{ inmueble.numero_hab }}
+                    </p>
+                    <p class="card-text">
+                        <i class="fa-solid fa-arrows-up-down-left-right"></i><strong> Metros Terreno:</strong> {{ inmueble.m2_terreno }}
+                    </p>
+                    <p class="card-text">
+                        <i class="fa-solid fa-car"></i><strong> Número de Estacionamientos:</strong> {{ inmueble.numero_est }}
+                    </p>
+                    <div class="mt-auto"> <!-- Empuja el botón hacia abajo -->
+                        <a href="#" class="btn btn-vrmas">Ver Más</a>
+                    </div>
+                </div>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
+
+<!-- Nuestro equipo -->
+<section class="py-10">
+    <h2 class="text-center text-2xl font-bold mb-6 pt-5">NUESTRO EQUIPO</h2>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 pt-5">
+            <div class="col">
+                <div class="card card-equipo">
+                    <img src="{% static 'img/gisela.jpeg' %}" alt="Gisela Oyarzún" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Gisela Oyarzún</h3>
+                        <p class="card-text">goyarzun@dulcehogar.cl</p>
+                        <p class="card-text">GERENTE GENERAL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-equipo">
+                    <img src="{% static 'img/gisela_02.jpeg' %}" alt="Gabriela Fernández" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Gabriela Fernández</h3>
+                        <p class="card-text">gfernandez@dulcehogar.cl</p>
+                        <p class="card-text">AGENTE INMOBILIARIO</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-equipo">
+                    <img src="{% static 'img/gisela_03.jpeg' %}" alt="Ana Besnier" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Ana Besnier</h3>
+                        <p class="card-text">abesnier@dulcehogar.cl</p>
+                        <p class="card-text">AGENTE INMOBILIARIO</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-equipo">
+                    <img src="{% static 'img/gisela_04.jpeg' %}" alt="Fabiola Huerta" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Fabiola Huerta</h3>
+                        <p class="card-text">fhuerta@dulcehogar.cl</p>
+                        <p class="card-text">AGENTE INMOBILIARIO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 
 

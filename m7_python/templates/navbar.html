@@ -27,15 +27,13 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark">
                         <li><a class="dropdown-item" href="{% url 'arriendos' %}">Arriendos</a></li>
-                        <li><a class="dropdown-item" href="{% url 'ventas' %}">Venta</a></li>              
+                        <li><a class="dropdown-item" href="{% url 'ventas' %}">Ventas</a></li>              
                     </ul>
                 </li>
             </ul>
-            <div class="d-flex ms-auto">
-                {% if not user.is_authenticated %}
+            <div class="d-flex ms-auto">               
                 <a class="btn btn-outline-light me-2" href="#">Iniciar Sesión</a>
-                <a class="btn btn-outline-light" href="#">Registrarse</a>
-                {% endif %}
+                <a class="btn btn-outline-light" href="#">Registrarse</a>               
             </div>
         </div>
     </div>
