@@ -21,4 +21,50 @@ def get_list_inmuebles(name, descr):
     return lista_inmueble
 
 
-resultado=get_list_inmuebles("Providencia","cocina")
+def get_list_inmuebles_by_comuna(comuna):
+    select = f""" SELECT A.id, A.nombre_inmueble, A.descripcion FROM public.m7_python_inmuebles as A INNER JOIN public.m7_python_region as B ON A.id_region_id = B id. INNER JOIN public.m7_python_comuna as C on A id._comuna_id = C.id WHERE C.comuna LIKE '%%{str(comuna)}%%'"""
+
+    result = Inmuebles.objects.raw(select)
+
+    archi1 = open("datos.txt", "w")
+    for p in result:
+        archi1.write(p.nombre_inmueble+','+p.descripcion) 
+        archi1.write("\n")
+
+    archi1.close()
+
+get_list_inmuebles_by_comuna('Bernardo')
+
+
+def get_list_inmuebles_region(id):
+    region = str(Region.objects.filter(id=id).values()[0]['Region'])
+
+    lista_inmueble = Inmuebles.objects.filter(id_region_id=id)
+
+    archi1=open("datos.txt","w")
+    for l in lista_inmueble.values():
+        archi1.write(str(l["nombre_inmueble"]))
+        archi1.write(',')
+        archi1.write(region)    
+        archi1.write("\n")
+
+    archi1.close()      
+
+get_list_inmuebles_region(16)      
+
+
+def get_list_inmuebles_by_region(region):
+    select = f""" SELECT A.id, A.nombre_inmueble, A.descripcion FROM public.m7_python_inmuebles as A INNER JOIN public.m7_python_region as B ON A.id_region_id = B id. INNER JOIN public.m7_python_comuna as C on A id._comuna_id = C.id WHERE B.region LIKE '%%{str(region)}%%'"""
+
+    result = Inmuebles.objects.raw(select)
+
+    archi1 = open("datos.txt", "w")
+    for p in result:
+        archi1.write(p.nombre_inmueble+','+p.descripcion) 
+        archi1.write("\n")
+
+    archi1.close()  
+
+get_list_inmuebles_by_region('Metropo')
+
+

@@ -1,36 +1,37 @@
-
 {% load static %}
 
-{% block 'content' %}
+{% block 'header' %}
 
-<div class="container-fluid position-fixed top-0 start-0 p-2" style="height: 110px;">
-    <div class="d-flex align-items-center justify-content-between col-12 col-lg-10" style="height: 100%;">
+<div class="cl_header container py-2"> <!-- Cambia 'pt-1' a 'py-1' para padding vertical -->
+    <div class="d-flex align-items-center justify-content-between col-12 col-lg-10 mx-auto"> <!-- Añadido 'mx-auto' para centrar el contenido en pantallas grandes -->
         <!-- Div para la imagen -->
-        <div class="align-items-center col-6 col-lg-4 pt-5" style="text-align: center; width: 250px; height: 200px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)">
-            <img src="{% static 'img/Dulce.png'%}" alt="logo" class="img-fluid" width="110" height="110">
+        <div class="d-flex align-items-center me-4"> <!-- Cambiado 'ms-5' a 'me-4' para espacio a la derecha -->
+            <img src="{% static 'img/logo350*110.png'%}" alt="logo" class="img-fluid" width="350" height="70">
         </div>
 
         <!-- Div para las cajas de información -->
-        <div class="d-flex align-items-center pt-2">
+        <div class="d-flex align-items-center gap-2"> <!-- Usado 'gap-2' para espacio entre cajas -->
             <!-- Caja para teléfono -->
-            <div class="align-items-center col-6 col-lg-4 pt-5" style="text-align: center; width: 250px; height: 200px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                <i class="fa-regular fa-phone pt-2 pb-2"></i>
-                <span style="color: red;">Telefono</span>
-                <p>123 Calle Principal, Ciudad</p>
+            <div class="d-flex flex-column align-items-center text-center p-2" style="width: 200px; height: 100px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <i class="fa-regular fa-phone py-2"></i>
+                <span class="text-danger">Telefono</span>
+                <p>+56 9 1234 5678</p>              
             </div>
-            
-            
 
             <!-- Caja para dirección -->
-            <div class="align-items-center col-6 col-lg-4 pt-5" style="text-align: center; width: 250px; height: 200px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                <i class="fa-regular fa-location-dot pt-2 pb-2"></i>
-                <span style="color: red;">Telefono</span>
+            <div class="d-flex flex-column align-items-center text-center p-2" style="width: 210px; height: 100px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <i class="fa-regular fa-location-dot py-2"></i>
+                <span class="text-danger">Dirección</span>
                 <p>123 Calle Principal, Ciudad</p>
             </div>
-            
-            
         </div>
     </div>
+</div>
+
+
+<div class="container">
+
+
 </div>
 
 {% endblock %}

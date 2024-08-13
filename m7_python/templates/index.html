@@ -3,6 +3,37 @@
 
 {% block 'content' %}
 
+<!-- banner principal  -->
+<img src="{% static 'img/banner_principal.png' %}" class="img-fluid" alt="banner principal corredores">
+
+<!-- Propiedades destacadas -->
+
+<div class="container pt-5 ">
+    <h1 class="text-center mb-5">Propiedades Destacadas</h1>
+    <div class="col-md-4 mb-4">
+        {% for inmueble in inmuebles %}
+        <div class="card">
+            <img src="{% static 'img/placeholder.jpg' %}" class="card-img-top" alt="Imagen de inmueble">
+            <div class="card-body">
+                <h5 class="card-title">{{ inmueble.nombre_inmueble }}</h5>
+                <p class="card-text">{{ inmueble.descripcion }}</p>
+                <p class="card-text">
+                    <i class="fa-solid fa-location-dot"></i><strong> Dirección:</strong> {{ inmueble.direccion }}</p>
+                <p class="card-text">
+                    <i class="fa-solid fa-arrows-up-down-left-right"></i><strong>  Metros Construidos:</strong> {{ inmueble.m2_construido }}</p>
+                <p class="card-text">
+                    <i class="fa-solid fa-toilet"></i><strong>  Número de Baños:</strong> {{ inmueble.numero_banos }}</p>
+                <p class="card-text">
+                    <i class="fa-solid fa-bed"></i><strong>  Número de Habitaciones:</strong> {{ inmueble.numero_hab }}</p>
+                <p class="card-text">
+                    <i class="fa-solid fa-arrows-up-down-left-right"></i><strong>  Metros Terreno:</strong> {{ inmueble.m2_terreno }}</p>
+                <p class="card-text">
+                    <i class="fa-solid fa-car"></i><strong>  Número de Estacionamientos:</strong> {{ inmueble.numero_est }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 
 

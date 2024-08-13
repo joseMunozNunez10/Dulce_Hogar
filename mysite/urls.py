@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from m7_python.views import inicio, bienvenido, acerca 
+from m7_python.views import inicio, bienvenido, acerca, servicios, contactos, arriendos, ventas
 
 
 urlpatterns = [
@@ -24,5 +24,9 @@ urlpatterns = [
     path('',inicio,name='indice'),
     path('bienvenido/',bienvenido,name='bienvenido'),
     path('acerca/',acerca,name='acerca'),
+    path('servicios/',servicios,name='servicios'),
+    path('contactos/',contactos,name='contactos'),
+    path('arriendos/',arriendos,name='arriendos'),
+    path('ventas/',ventas,name='ventas'),
 
 ]
