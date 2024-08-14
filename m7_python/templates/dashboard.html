@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'content' %}
+<div>
+    <h1>Bienvenido, {{user.username}}</h1>
+    <h5>Nombre, {{user.first_name}}</h5>
+    <h5>Apellido, {{user.last_name}}</h5>
+    <h5>Email, {{user.email}}</h5>
+    <a href='update_profile/'>Actualizar Perfil</a>
+</div>
+{% endblock %}

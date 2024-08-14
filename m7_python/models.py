@@ -37,5 +37,6 @@ class Inmuebles(models.Model):
     direccion = models.CharField(max_length=200)
     m2_terreno = models.FloatField(default=0)
     numero_est = models.IntegerField(default=0)
+    imagen = models.ImageField(upload_to='inmuebles/', null=True, blank=True)
 
 

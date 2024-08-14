@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<form method='POST'>
+    {% csrf_token %}    
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card p-5 shadow-lg">
+            <div class="text-center">
+                <h2 class="logout mb-4">Ya te vas!! Encontras tu Dulce Hogar</h2>
+                <p class="mb-4">Has cerrado sesión correctamente <br>
+                    ¡Gracias por confiar en nosotros.</p>
+
+                <a href="{% url 'login' %}" class="btn btn-vrmas"> Iniciar sesión</a>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load static %}
+
+{% block 'footer' %}
+<footer class="footer-bg text-center text-muted py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <img src="{% static 'img/Dulce.png' %}" alt="InmobiHogar Logo" class="mb-4" />
+                <h1 class="h4 font-weight-bold">DULCEHOGAR</h1>
+                <p class="mb-2">CORREDORA DE PROPIEDADES</p>
+                <div class="d-flex justify-content-center">
+                    <a href="#" class="footer-link me-4">Facebook</a>
+                    <a href="#" class="footer-link">Instagram</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h2 class="h5 font-weight-semibold">MENÚ</h2>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="footer-link">Inicio</a></li>
+                    <li><a href="#" class="footer-link">Nosotros</a></li>
+                    <li><a href="#" class="footer-link">Servicios</a></li>
+                    <li><a href="#" class="footer-link">Contactos</a></li>
+                    <li><a href="#" class="footer-link">Ventas</a></li>
+                    <li><a href="#" class="footer-link">Arriendos</a></li>                    
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h2 class="h5 font-weight-semibold">CONTACTO</h2>
+                <p>123 Calle Principal, Ciudad</p>
+                <p>+569 1234 5678</p>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <p class="mb-1">© 2024 - DULCEHOGAR CORREDORA DE PROPIEDADES - TODOS LOS DERECHOS RESERVADOS.</p>          
+        </div>
+    </div>
+</footer>
+{% endblock %}

@@ -112,3 +112,38 @@
 .card-text {
     color: #6c757d;
 }
+
+
+/* #######################    ESTILOS FORMULARIO REGISTRARSE   ####################### */
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.form-control {
+    width: 100%;
+}
+.btn-vrmas {
+    background-color: red; /* Cambia el color según tu diseño */
+    color: white;
+}
+.btn-vrmas:hover {
+    background-color: darkred;
+}
+
+
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.form-control {
+    width: 100%;
+}
+.btn-primary-custom {
+    background-color: red; /* Cambia el color según tu diseño */
+    color: white;
+}
+.btn-primary-custom:hover {
+    background-color: darkred;
+}

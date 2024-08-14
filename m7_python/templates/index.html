@@ -54,7 +54,7 @@
         {% for inmueble in inmuebles %}
         <div class="col-md-4 mb-4">
             <div class="card h-100"> 
-                <img src="{% static 'img/placeholder.jpg' %}" class="card-img-top" alt="Imagen de inmueble">
+                <img src="{{ inmueble.imagen.url }}" class="card-img-top" alt="Imagen de inmueble">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">{{ inmueble.nombre_inmueble }}</h5>
                     <p class="card-text">{{ inmueble.descripcion }}</p>
@@ -77,7 +77,7 @@
                         <i class="fa-solid fa-car"></i><strong> Número de Estacionamientos:</strong> {{ inmueble.numero_est }}
                     </p>
                     <div class="mt-auto"> <!-- Empuja el botón hacia abajo -->
-                        <a href="#" class="btn btn-vrmas">Ver Más</a>
+                        <a href="#" class="btn btn-primary">Ver Más</a> <!-- Cambiado a btn-primary -->
                     </div>
                 </div>
             </div>
@@ -85,6 +85,7 @@
         {% endfor %}
     </div>
 </div>
+
 
 <!-- Nuestro equipo -->
 <section class="py-10">
@@ -95,8 +96,8 @@
                 <div class="card card-equipo">
                     <img src="{% static 'img/gisela.jpeg' %}" alt="Gisela Oyarzún" class="card-img-top">
                     <div class="card-body text-center">
-                        <h3 class="card-title">Gisela Oyarzún</h3>
-                        <p class="card-text">goyarzun@dulcehogar.cl</p>
+                        <h3 class="card-title">Fernanda Ibarra</h3>
+                        <p class="card-text">fibarra@dulcehogar.cl</p>
                         <p class="card-text">GERENTE GENERAL</p>
                     </div>
                 </div>
@@ -134,10 +135,5 @@
         </div>
     </div>
 </section>
-
-
-
-
-
 
 {% endblock %}
