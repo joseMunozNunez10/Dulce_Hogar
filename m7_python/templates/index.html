@@ -76,8 +76,8 @@
                     <p class="card-text">
                         <i class="fa-solid fa-car"></i><strong> Número de Estacionamientos:</strong> {{ inmueble.numero_est }}
                     </p>
-                    <div class="mt-auto"> <!-- Empuja el botón hacia abajo -->
-                        <a href="#" class="btn btn-primary">Ver Más</a> <!-- Cambiado a btn-primary -->
+                    <div class="mt-auto"> 
+                        <a href="#" class="btn btn-primary-custom">Ver Más</a> 
                     </div>
                 </div>
             </div>
@@ -85,7 +85,6 @@
         {% endfor %}
     </div>
 </div>
-
 
 <!-- Nuestro equipo -->
 <section class="py-10">
@@ -136,4 +135,30 @@
     </div>
 </section>
 
+<!-- Sectores mas populares -->
+<div class="container my-4 pt-5">
+    <h2 class="text-center mb-4">SECTORES MÁS POPULARES</h2>
+    <div class="row g-4 pt-5">
+      <div class="col-12 col-md-6">
+        <div class="image-container image-container-3">
+            <img src="{% static 'img/penalolen.png' %}" alt="Peñalolén">
+          </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="image-container image-container-2">
+          <img src="{% static 'img/pirque.png' %}" alt="Pirque">
+        </div>
+      </div>
+      <div class="col-12 col-md-6">        
+        <div class="image-container image-container-1">
+            <img src="{% static 'img/puentealto.png' %}" alt="Puente Alto">
+          </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="image-container image-container-4">
+          <img src="{% static 'img/laflorida.png' %}" alt="La Florida">
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

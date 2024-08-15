@@ -1,37 +1,46 @@
 {% load static %}
 
 {% block 'footer' %}
-<footer class="footer-bg text-center text-muted py-5">
+<footer class="footer-bg text-center text-muted py-5 bg-dark">
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-4 mb-md-0">
-                <img src="{% static 'img/Dulce.png' %}" alt="InmobiHogar Logo" class="mb-4" />
-                <h1 class="h4 font-weight-bold">DULCEHOGAR</h1>
-                <p class="mb-2">CORREDORA DE PROPIEDADES</p>
+                <img src="{% static 'img/logo350*110.png' %}" alt="InmobiHogar Logo" class="mb-4" />
+                <h1 class="h4 font-weight-bold text-white">DULCEHOGAR</h1>
+                <p class="mb-2 text-white">CORREDORA DE PROPIEDADES</p>
                 <div class="d-flex justify-content-center">
-                    <a href="#" class="footer-link me-4">Facebook</a>
-                    <a href="#" class="footer-link">Instagram</a>
+                    <a href="#" class="footer-link me-4" style="text-decoration: none; color: white; ">
+                        <i class="fab fa-facebook-f "></i> Facebook</a>
+                    <a href="#" class="footer-link" style="text-decoration: none; color: white;">
+                        <i class="fab fa-instagram"></i> Instagram</a>
                 </div>
             </div>
             <div class="col-md-4 mb-4 mb-md-0">
-                <h2 class="h5 font-weight-semibold">MENÚ</h2>
+                <h2 class="h5 font-weight-semibold text-white">MENÚ</h2>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="footer-link">Inicio</a></li>
-                    <li><a href="#" class="footer-link">Nosotros</a></li>
-                    <li><a href="#" class="footer-link">Servicios</a></li>
-                    <li><a href="#" class="footer-link">Contactos</a></li>
-                    <li><a href="#" class="footer-link">Ventas</a></li>
-                    <li><a href="#" class="footer-link">Arriendos</a></li>                    
+                    <li><a href="{% url 'indice' %}" class="footer-link" style="text-decoration: none; color: white;">Inicio</a></li>
+                    <li><a href="{% url 'acerca' %}" class="footer-link" style="text-decoration: none; color: white;">Nosotros</a></li>
+                    <li><a href="{% url 'servicios' %}" class="footer-link" style="text-decoration: none; color: white;">Servicios</a></li>
+                    <li><a href="{% url 'contactos' %}" class="footer-link" style="text-decoration: none; color: white;">Contactos</a></li>
+                    <li><a href="{% url 'arriendos' %}" class="footer-link" style="text-decoration: none; color: white;">Ventas</a></li>
+                    <li><a href="{% url 'arriendos' %}" class="footer-link" style="text-decoration: none; color: white;">Arriendos</a></li>                    
                 </ul>
             </div>
             <div class="col-md-4">
-                <h2 class="h5 font-weight-semibold">CONTACTO</h2>
-                <p>123 Calle Principal, Ciudad</p>
-                <p>+569 1234 5678</p>
+                <h2 class="h5 font-weight-semibold text-white">CONTACTO</h2>
+                <p class="text-white">
+                    <i class="fa-solid fa-location-dot"></i> 123 Calle Principal, Ciudad</p>
+                <p class="text-white">
+                    <i class="fa-solid fa-phone"></i> +569 1234 5678</p>
+                <p class="text-white">
+                    <i class="fa-solid fa-envelope"></i> DulceHogar.cl</p>
+                <p class="text-white">
+                    <i class="fa-solid fa-email"></i> info@dulcehogar.cl</p>    
+                   
             </div>
         </div>
         <div class="text-center mt-4">
-            <p class="mb-1">© 2024 - DULCEHOGAR CORREDORA DE PROPIEDADES - TODOS LOS DERECHOS RESERVADOS.</p>          
+            <p class="mb-1 text-white">© 2024 - DULCEHOGAR CORREDORA DE PROPIEDADES - TODOS LOS DERECHOS RESERVADOS.</p>          
         </div>
     </div>
 </footer>

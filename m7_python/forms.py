@@ -26,34 +26,3 @@ class TipoForm(forms.Form):
     direccion = forms.CharField(label='Dirección', max_length=100)  
     telefono = forms.CharField(label='Teléfono', max_length=100)       
 
-class MiFormulario(forms.Form):
-    nombres = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombres'}),
-        required=True
-    )
-    apellidos = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Apellidos'}),
-        required=True
-    )
-    username = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre de usuario'}),
-        required=True
-    )
-    email = forms.EmailField(
-        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}),
-        required=True
-    )
-    password = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Contraseña'}),
-        required=True
-    )
-    password_confirmation = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirmación de contraseña'}),
-        required=True
-    )
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        # Remove any help_text from fields
-        for field in self.fields.values():
-            field.help_text = None

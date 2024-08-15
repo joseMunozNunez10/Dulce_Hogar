@@ -2,23 +2,20 @@
 
 {% block 'header' %}
 
-<div class="cl_header container py-2"> <!-- Cambia 'pt-1' a 'py-1' para padding vertical -->
-    <div class="d-flex align-items-center justify-content-between col-12 col-lg-10 mx-auto"> <!-- Añadido 'mx-auto' para centrar el contenido en pantallas grandes -->
-        <!-- Div para la imagen -->
-        <div class="d-flex align-items-center me-4"> <!-- Cambiado 'ms-5' a 'me-4' para espacio a la derecha -->
-            <img src="{% static 'img/logo350*110.png'%}" alt="logo" class="img-fluid" width="350" height="70">
-        </div>
-
-        <!-- Div para las cajas de información -->
-        <div class="d-flex align-items-center gap-2"> <!-- Usado 'gap-2' para espacio entre cajas -->
-            <!-- Caja para teléfono -->
+<div class="cl_header container py-2"> 
+    <div class="d-flex align-items-center justify-content-between col-12 col-lg-10 mx-auto">        
+        <a href="{% url 'indice' %}" class="d-flex align-items-center me-4">
+            <img src="{% static 'img/logo350*110.png' %}" alt="logo" class="img-fluid" width="350" height="70">
+        </a>
+        
+       
+        <div class="d-flex align-items-center gap-2">             
             <div class="d-flex flex-column align-items-center text-center p-2" style="width: 200px; height: 100px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
                 <i class="fa-regular fa-phone py-2"></i>
                 <span class="text-danger">Telefono</span>
                 <p>+56 9 1234 5678</p>              
             </div>
-
-            <!-- Caja para dirección -->
+            
             <div class="d-flex flex-column align-items-center text-center p-2" style="width: 210px; height: 100px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
                 <i class="fa-regular fa-location-dot py-2"></i>
                 <span class="text-danger">Dirección</span>
