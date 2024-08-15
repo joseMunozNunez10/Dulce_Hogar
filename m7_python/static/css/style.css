@@ -16,7 +16,6 @@
 
 /* #######################    ESTILOS HEADER    ####################### */
 
-
 .cl_header {
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
@@ -28,7 +27,6 @@
     margin-bottom: 0.1rem;
 }
 
-
 .fa-phone,
 .fa-location-dot {
     font-size: 1.5rem;
@@ -38,9 +36,7 @@
     color: red;
 }
 
-
 /* #######################    ESTILOS BARRA FILTRO    ####################### */
-
 
 .custom-bg {
     background-color: #ffffff;
@@ -92,7 +88,6 @@
 
 /* #######################    ESTILOS NUESTRO EQUIPO   ####################### */
 
-
 .card-equipo {
     border-radius: 0.5rem;
     overflow: hidden;
@@ -112,7 +107,6 @@
 .card-text {
     color: #6c757d;
 }
-
 
 /* #######################    ESTILOS FORMULARIO REGISTRARSE   ####################### */
 
@@ -159,15 +153,15 @@
 .image-container {
     position: relative;
     overflow: hidden;
-    width: 100%;
+    
   }
 
-  .image-container-1, .image-container-3, .image-container-4 {
+  .image-container-1, .image-container-4 {
     max-width: 570px;
     height: 190px;
   }
 
-  .image-container-2 {
+  .image-container-2, .image-container-3 {
     max-width: 570px;
     height: 380px;
   }
@@ -187,7 +181,8 @@
   }
   .image-container img {
     width: 100%;
-    height: auto;
+    height: 500px;
+    object-fit: cover;
   }
   .image-container .additional-image {
     position: absolute;
@@ -199,3 +194,41 @@
     margin-bottom: -16px;
     z-index: 20;
   }
+
+   /* #######################    ESTILOS SERVICIOS  ####################### */
+
+   hero-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.hero-subtitle {
+    font-size: 2rem;
+    color: #6c757d;
+}
+.hero-text {
+    font-size: 1.125rem;
+    color: #495057;
+}
+.card {
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+.card-text {
+    font-size: 1rem;
+    color: #6c757d;
+}
+.contact-info {
+    margin-top: 20px;
+}
+.contact-info img {
+    width: 24px;
+    height: 24px;
+}

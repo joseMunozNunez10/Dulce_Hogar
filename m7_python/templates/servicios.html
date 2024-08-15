@@ -2,7 +2,39 @@
 {% load static %}   
 
 {% block 'content' %}
-<div>
-    <h1>Venta</h1>
+<div class="container hero-section pt-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <h1 class="hero-title">Arriendo</h1>
+            <p class="hero-text">1. Asesoramiento personalizado en la selección de propiedades para arrendar.</p>
+            <p class="hero-text">2. Asistencia en la búsqueda de propiedades en la ubicación deseada.</p>               
+            <p class="hero-text">3. Negociación de términos de arrendamiento y elaboración de contratos.</p>
+            <p class="hero-text">4. Inspección de propiedades antes del arrendamiento.</p>
+            <p class="hero-text">5. Gestión de pagos y depósito de garantía.</p>
+            <p class="hero-text">6. Soporte continuo durante el período de arrendamiento.</p>
+            <p class="hero-text">7. Recepción y gestión de feedback de arrendatarios.</p>
+        </div>
+        <div class="col-lg-6">
+            <img src="{% static 'img/negociacion.jpg' %}" alt="Nuestro equipo" class="img-fluid rounded shadow">
+        </div>
+    </div>
+</div>
+
+<div class="container pt-5 pb-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <img src="{% static 'img/compracasa.jpg' %}" alt="Visión de futuro" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-lg-6">
+            <h1 class="hero-title">Ventas</h1>
+            <p class="hero-text">1. Asesoramiento en la valoración de propiedades para la venta.</p>
+            <p class="hero-text">2. Marketing y promoción de propiedades en diversas plataformas.</p>               
+            <p class="hero-text">3. Elaboración de contratos de venta y gestión de documentación legal.</p>
+            <p class="hero-text">4. Organización de sesiones de fotos y visitas a propiedades.</p>
+            <p class="hero-text">5. Negociación de ofertas y cierre de ventas</p>
+            <p class="hero-text">6. Gestión de pagos y transferencia de propiedad.</p>
+            <p class="hero-text">7. Asesoramiento post-venta y gestión de feedback de compradores.</p>
+        </div>        
+    </div>
 </div>
 {% endblock %}
