@@ -2,7 +2,49 @@
 {% load static %}   
 
 {% block 'content' %}
-<div>
-    <h1>contactos</h1>
-</div>
+<div class=" mt-5">
+    <div class="row justify-content-center container-fluid mb-5">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-danger text-white">
+                    <h2 class="mb-0">Contactos</h2>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted mb-4">¿Tiene alguna pregunta o comentario? ¡No dude en comunicarse con nosotros!</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" id="name" name="name" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea id="message" name="message" rows="4" class="form-control"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-vrmas">Enviar</button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <h3 class="h5">Conéctate con nosotros</h3>
+                    <div class="d-flex justify-content-start">
+                        <a href="#" class="me-3" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook fa-lg text-danger"></i>
+                        </a>
+                        <a href="#" class="me-3" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram fa-lg text-danger"></i>
+                        </a>
+                        <a href="#" aria-label="X">
+                            <i class="fa-brands fa-x fa-lg text-danger"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}s

@@ -26,3 +26,10 @@ class TipoForm(forms.Form):
     direccion = forms.CharField(label='Dirección', max_length=100)  
     telefono = forms.CharField(label='Teléfono', max_length=100)       
 
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')
+        
+            
+

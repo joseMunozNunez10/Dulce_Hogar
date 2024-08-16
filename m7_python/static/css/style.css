@@ -232,3 +232,15 @@
     width: 24px;
     height: 24px;
 }
+
+  /* #######################    ESTILOS CONTACTO  ####################### */
+
+
+.card {
+    background-color: #ffffff;
+}
+
+.bg-vrmas {
+    background-color: red;
+    color: white;
+}
