@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-5 shadow-lg w-100" style="max-width: 800px;">
+        <h1 class="mb-4 text-center">Actualizar Inmueble</h1>
+        
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            {% if u_form.errors %}
+                <div class="alert alert-danger">
+                    {% for field in u_form %}
+                        {% if field.errors %}
+                            <div>
+                                <strong>{{ field.label }}</strong>: {{ field.errors }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            
+            {% for field in u_form %}
+                <div class="mb-3">
+                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="text-danger">{{ field.errors }}</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            
+            <div class="d-grid container" style="max-width: 320px;">
+                <button type="submit" class="btn btn-vrmas">Actualizar</button>
+            </div>
+        </form>
+        
+        <div class="text-center mt-3">
+            <a href="{% url 'indice' %}" class="btn btn-secondary">Volver al inicio</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

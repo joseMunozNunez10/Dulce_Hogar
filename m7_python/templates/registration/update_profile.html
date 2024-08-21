@@ -5,23 +5,31 @@
 <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <div class="card p-5 shadow-lg w-100" style="max-width: 400px;">
         <h2 class="login mb-4 text-center">
-            Actualiza tu Perfil</span>
+            Actualiza tu Perfil
         </h2>
-        <p class="text-center mb-4 text-bold">¡Asegúrate de que tu información esté actualizada!</p>
+        <p class="text-center mb-4 text-bold">¡Asegúrate de que tu información esté correcta!</p>
         
-        {% if form.errors %}
+        {% if u_form.errors %}
             <div class="alert alert-danger">
-                {{ form.non_field_errors }}
+                {% for field in u_form %}
+                    {% if field.errors %}
+                        <div>
+                            <strong>{{ field.label }}</strong>: {{ field.errors }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
         {% endif %}
         
         <form method="post" action="{% url 'update_profile' %}">
             {% csrf_token %}
-            {% for field in form %}
+            {% for field in u_form %}
                 <div class="mb-3">
                     <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
                     {{ field }}
-                    {{ field.errors }}
+                    {% if field.errors %}
+                        <div class="text-danger">{{ field.errors }}</div>
+                    {% endif %}
                 </div>
             {% endfor %}
             <div class="d-grid">
@@ -34,3 +42,5 @@
     </div>
 </div>
 {% endblock %}
+
+

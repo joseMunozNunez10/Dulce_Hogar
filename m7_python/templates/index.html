@@ -6,38 +6,38 @@
 <!-- banner principal  -->
 <img src="{% static 'img/banner_principal.png' %}" class="img-fluid" alt="banner principal corredores">
 
-<!-- Filtro por propiedades  -->
+<!-- Filtro por propiedades -->
 <div class="container mt-4">
     <div class="bg-white border custom-border-danger p-4 d-flex align-items-center gap-3">
         <div class="flex-grow-1">
-            <select class="form-select">
-                <option>TIPO USUARIO</option>
+            <select id="tipo_usuario" class="form-select">
+                <option value="">TIPO USUARIO</option>
                 {% for tipo_user in tipos_usuario %}
-                    <option>{{ tipo_user.tipo_user }}</option>
+                    <option value="{{ tipo_user.id }}">{{ tipo_user.tipo_user }}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="flex-grow-1">
-            <select class="form-select">
-                <option>TIPO PROPIEDAD</option>
+            <select id="tipo_inmueble" class="form-select">
+                <option value="">TIPO PROPIEDAD</option>
                 {% for tipo_inmueble in tipos_inmueble %}
-                    <option>{{ tipo_inmueble.tipo_inmueble }}</option>
+                    <option value="{{ tipo_inmueble.id }}">{{ tipo_inmueble.tipo_inmueble }}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="flex-grow-1">
-            <select class="form-select">
-                <option>REGIÓN</option>
+            <select id="region_cod" class="form-select">
+                <option value="">REGIÓN</option>
                 {% for region in regiones %}
-                    <option>{{ region.region }}</option>
+                    <option value="{{ region.id }}">{{ region.region }}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="flex-grow-1">
-            <select class="form-select">
-                <option>COMUNA</option>
+            <select id="comuna_cod" class="form-select">
+                <option value="">COMUNA</option>
                 {% for comuna in comunas %}
-                    <option>{{ comuna.comuna }}</option>
+                    <option value="{{ comuna.id }}" data-region="{{ comuna.region.id }}">{{ comuna.comuna }}</option>
                 {% endfor %}
             </select>
         </div>
@@ -47,14 +47,19 @@
     </div>
 </div>
 
+
 <!-- Propiedades destacadas -->
 <div class="container pt-5">
     <h1 class="text-center mb-5">PROPIEDADES DESTACADAS</h1>
     <div class="row">
         {% for inmueble in inmuebles %}
         <div class="col-md-4 mb-4">
-            <div class="card h-100"> 
-                <img src="{{ inmueble.imagen.url }}" class="card-img-top" alt="Imagen de inmueble">
+            <div class="card h-100">
+                {% if inmueble.imagen %}
+                    <img src="{{ inmueble.imagen.url }}" class="card-img-top" alt="Imagen de inmueble">
+                {% else %}
+                    <img src="{% static 'images/default-image.png' %}" class="card-img-top" alt="Imagen predeterminada">
+                {% endif %}
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">{{ inmueble.nombre_inmueble }}</h5>
                     <p class="card-text">{{ inmueble.descripcion }}</p>
@@ -64,21 +69,7 @@
                     <p class="card-text">
                         <i class="fa-solid fa-arrows-up-down-left-right"></i><strong> Metros Construidos:</strong> {{ inmueble.m2_construido }}
                     </p>
-                    <p class="card-text">
-                        <i class="fa-solid fa-toilet"></i><strong> Número de Baños:</strong> {{ inmueble.numero_banos }}
-                    </p>
-                    <p class="card-text">
-                        <i class="fa-solid fa-bed"></i><strong> Número de Habitaciones:</strong> {{ inmueble.numero_hab }}
-                    </p>
-                    <p class="card-text">
-                        <i class="fa-solid fa-arrows-up-down-left-right"></i><strong> Metros Terreno:</strong> {{ inmueble.m2_terreno }}
-                    </p>
-                    <p class="card-text">
-                        <i class="fa-solid fa-car"></i><strong> Número de Estacionamientos:</strong> {{ inmueble.numero_est }}
-                    </p>
-                    <div class="mt-auto"> 
-                        <a href="#" class="btn btn-primary-custom">Ver Más</a> 
-                    </div>
+                    <!-- Más campos aquí -->
                 </div>
             </div>
         </div>
@@ -148,16 +139,7 @@
         <div class="image-container image-container-2">
           <img src="{% static 'img/pirque.png' %}" alt="Pirque">
         </div>
-      </div>
-      <div class="col-12 col-md-6">        
-        <div class="image-container image-container-1">
-            <img src="{% static 'img/puentealto.png' %}" alt="Puente Alto">
-          </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="image-container image-container-4">
-          <img src="{% static 'img/laflorida.png' %}" alt="La Florida">
-        </div>
+      </div>      
       </div>
     </div>
   </div>

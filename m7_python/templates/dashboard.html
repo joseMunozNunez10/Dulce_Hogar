@@ -18,17 +18,30 @@
                 </div>
                 <div class="card-footer text-center">
                     <a href="{% url 'update_profile' %}" class="btn btn-outline-danger">Actualizar Perfil</a>
-                    <a href="{% url 'logout' %}" class="btn btn-outline-danger">Cerrar Sesión</a>
+                    <a href="{% url 'new_inmueble_url' %}" class="btn btn-outline-danger">Nuevo Inmueble</a>
                 </div>
             </div>
         </div>
 
         <!-- Sección de Información Adicional -->
         <div class="col-md-8">
+            <h2 class="mb-4">Lista de Inmuebles Registrados</h2>
+            {% for product in inmuebles %}
+                <tr>
+                    <td>
+                        <h5>{{ product.nombre_inmueble }}</h5>
+                        <a href="/update_inbueble?id_inmueble={{ product.id }}">Editar</a>
+                        <a href="/delete_inmueble?id_inmueble={{ product.id }}">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}    
+                      
+        </div>
+        <div class="col-md-8">
             <h2 class="mb-4">Información Adicional</h2>
             <div class="alert alert-info" role="alert">
                 Aquí veras la información de tu inmueble.
-            </div>
+            </div>            
         </div>
     </div>
 </div>

@@ -27,6 +27,7 @@ def inicio(request):
     
     return render(request, 'index.html', context)
 
+
 def acerca(request):
     return render(request, 'acerca.html', {})
 
@@ -88,7 +89,10 @@ def register_tipoView(request):
 
 @login_required
 def dashboardView(request): 
-    return render(request, 'dashboard.html', {})
+    username = request.user 
+    current_user = request.user
+    Inm = Inmuebles.objects.filter(id_user = current_user.id)
+    return render(request, 'dashboard.html', {'inmuebles': Inm})
 
 
 @login_required
@@ -97,18 +101,74 @@ def profile(request):
         profile = request.user.profile
     except Profile.DoesNotExist:
         profile = None
-
+    
     if request.method == 'POST':
-        u_form = UserUpdateForm(request.POST, instance=profile)
+        u_form = UserUpdateForm(request.POST, instance=request.user)
         if u_form.is_valid():
             u_form.save()
             return HttpResponseRedirect('/dashboard')
     else:
-        u_form = UserUpdateForm(instance=profile)
+        u_form = UserUpdateForm(instance=request.user)
     
     context = {'u_form': u_form}
     return render(request, 'registration/update_profile.html', context)
 
+@login_required
+def new_inmuebleView(request):
+    if request.method == 'POST':
+        u_form = InmuebleForm(request.POST, request.FILES)  # reuuest.file para las imagenes
+        if u_form.is_valid():
+           
+            tipo_inmueble = Tipo_inmueble.objects.get(id=u_form.cleaned_data['id_tipo_inmueble'])
+            comuna = Comuna.objects.get(id=u_form.cleaned_data['id_comuna'])
+            reg = Region.objects.get(id=u_form.cleaned_data['id_region'])
+          
+            inm = Inmuebles(
+                id_tipo_inmueble=tipo_inmueble,
+                id_comuna=comuna,
+                id_region=reg,
+                nombre_inmueble=u_form.cleaned_data['nombre_inmueble'],
+                descripcion=u_form.cleaned_data['descripcion'],
+                m2_construido=u_form.cleaned_data['m2_construido'],
+                numero_banos=u_form.cleaned_data['numero_banos'],
+                numero_hab=u_form.cleaned_data['numero_hab'],
+                direccion=u_form.cleaned_data['direccion'],
+                m2_terreno=u_form.cleaned_data['m2_terreno'],
+                numero_est=u_form.cleaned_data['numero_est'],
+                id_user=request.user
+            )
+            inm.save()
+            return HttpResponseRedirect('/dashboard')
+    else:
+        u_form = InmuebleForm()
+
+    context = {'u_form': u_form}
+    return render(request, 'new_inmueble.html', context)
+ 
+@login_required
+def inmueble_update(request):
+    inmueble_id = request.GET.get('id_inmueble')
+    
+    if request.method == 'POST':
+        inmueble = Inmuebles.objects.filter(id=inmueble_id).first()
+        u_form = InmuebleUpdateForm(request.POST, request.FILES, instance=inmueble)
+        if u_form.is_valid():
+            u_form.save()
+            return HttpResponseRedirect('/dashboard')
+    else:
+        inmueble = Inmuebles.objects.filter(id=inmueble_id).first()
+        u_form = InmuebleUpdateForm(instance=inmueble)
+    
+    context = {'u_form': u_form}
+    return render(request, 'update_inmueble.html', context)
+
+   
+@login_required
+def inmuebles_delete(request):
+    inmueble_id = request.GET['inmueble_id']
+    record = Inmuebles.objects.filter(id=inmueble_id)
+    record.delete()
+    return HttpResponseRedirect('/dashboard')
 
 
 

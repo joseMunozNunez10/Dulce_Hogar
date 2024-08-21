@@ -21,7 +21,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from m7_python.views import *
 from django.contrib.auth.views import LoginView, LogoutView
-from m7_python.views import dashboardView, registerView, register_tipoView
+from m7_python.views import dashboardView, registerView, register_tipoView, profile, new_inmuebleView
+from m7_python import views
+
+
+
 
 
 
@@ -40,6 +44,9 @@ urlpatterns = [
     path('register/', registerView, name='register'),
     path('register_tipo/', register_tipoView, name='registerTipo'), 
     path('update_profile/', profile, name='update_profile'),
+    path('new_inmueble/', views.new_inmuebleView, name='new_inmueble_url'),
+    path('update_inmueble', views.inmueble_update, name='update_inmueble_url'),
+    path('eliminar_inmueble', views.inmuebles_delete, name='delete_inmueble_url'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

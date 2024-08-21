@@ -4,7 +4,7 @@ def get_all_inmuebles():
     Inm= Inmuebles.objects.all()
     return Inm
 
-def insertar_inmueble(data):
+def insertar_inmueble(data, imagen=None):
     id_user = data[0]
     id_tipo_inmueble = data[1]
     id_comuna = data[2]
@@ -26,7 +26,10 @@ def insertar_inmueble(data):
         m2_cuadrados = m2_cuadrados,
         numero_banos = numero_banos,
         numero_hab = numero_hab,
-        direccion = direccion)
+        direccion = direccion,
+        imagen = imagen
+        )
+        
 
     inm.save()
 
