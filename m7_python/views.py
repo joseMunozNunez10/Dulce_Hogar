@@ -6,7 +6,7 @@ from .forms import FiltroInmuebleForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 
 
 def inicio(request):
@@ -135,6 +135,7 @@ def new_inmuebleView(request):
                 direccion=u_form.cleaned_data['direccion'],
                 m2_terreno=u_form.cleaned_data['m2_terreno'],
                 numero_est=u_form.cleaned_data['numero_est'],
+                imagen = u_form.cleaned_data['imagen'],
                 id_user=request.user
             )
             inm.save()
@@ -169,6 +170,5 @@ def inmuebles_delete(request):
     record = Inmuebles.objects.filter(id=inmueble_id)
     record.delete()
     return HttpResponseRedirect('/dashboard')
-
 
 

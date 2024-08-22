@@ -25,10 +25,6 @@ from m7_python.views import dashboardView, registerView, register_tipoView, prof
 from m7_python import views
 
 
-
-
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',inicio,name='indice'),

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'content' %}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100 pt-5 mb-5">
+    <div class="card p-5 shadow-lg w-100" style="max-width: 600px;">
+        <h2 class="text-center mb-5">Actualizar inmueble</h2>
+        
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ u_form.nombre_inmueble.id_for_label }}">Nombre del Inmueble</label>
+                {{ u_form.nombre_inmueble }}
+            </div>
+            <div class="form-group">
+                <label for="{{ u_form.descripcion.id_for_label }}">Descripción</label>
+                {{ u_form.descripcion }}
+            </div>
+            <div class="form-group mt-3">
+                <label for="{{ u_form.m2_construido.id_for_label }}">Metros Construidos</label>
+                {{ u_form.m2_construido }}
+            </div>
+            <div class="form-group mt-3">
+                <label for="{{ u_form.numero_banos.id_for_label }}">Número de Baños</label>
+                {{ u_form.numero_banos }}
+            </div>
+            <div class="form-group mt-3">
+                <label for="{{ u_form.numero_hab.id_for_label }}">Número de Habitaciones</label>
+                {{ u_form.numero_hab }}
+            </div>
+            <div class="form-group mt-3">
+                <label for="{{ u_form.direccion.id_for_label }}">Dirección</label>
+                {{ u_form.direccion }}
+            </div>
+            <div class="form-group mt-3">
+                <label for="{{ u_form.m2_terreno.id_for_label }}">Metros de Terreno</label>
+                {{ u_form.m2_terreno }}
+            </div>
+            <div class="form-group mt-3">
+                <label for="{{ u_form.numero_est.id_for_label }}">Número de Estacionamientos</label>
+                {{ u_form.numero_est }}
+            </div>
+            <div class="form-group mt-3">
+                <label for="{{ u_form.imagen.id_for_label }}">Imagen</label>
+                <br>
+                {{ u_form.imagen }}                 
+            </div>            
+            <button type="submit" class="btn btn-vrmas w-100 mt-5">Guardar Cambios</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

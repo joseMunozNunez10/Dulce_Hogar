@@ -8,7 +8,7 @@
         <div class="col-md-4">
             <div class="card border-danger mb-3">
                 <div class="card-header bg-danger text-white">
-                    <h4 class="mb-0">Perfil de Usuario</h4>
+                    <h4 class="mb-0">Perfil de Usuario Arrendatario</h4>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" style="color: black;">Bienvenid@, {{ user.username }}</h5>
@@ -30,7 +30,7 @@
                 <tr>
                     <td>
                         <h5>{{ product.nombre_inmueble }}</h5>
-                        <a href="/update_inbueble?id_inmueble={{ product.id }}">Editar</a>
+                        <a href="/update_inmueble?id_inmueble={{ product.id }}">Editar</a>
                         <a href="/delete_inmueble?id_inmueble={{ product.id }}">Eliminar</a>
                     </td>
                 </tr>
